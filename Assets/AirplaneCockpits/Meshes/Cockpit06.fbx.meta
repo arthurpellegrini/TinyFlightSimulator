@@ -1,0 +1,209 @@
+fileFormatVersion: 2
+guid: d78a14ec3800cb3439ea40fe8dd9a334
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cockpit06Base
+    100004: Cockpit06Compass01
+    100006: Cockpit06Compass02
+    100008: Cockpit06Details
+    100010: Cockpit06Horizont
+    100012: Cockpit06Needle01
+    100014: Cockpit06Needle02
+    100016: Cockpit06Needle03
+    100018: Cockpit06Needle04
+    100020: Cockpit06Needle05
+    100022: Cockpit06Needle06
+    100024: Cockpit06Needle07
+    100026: Cockpit06Needle08
+    100028: Cockpit06Needle09
+    100030: Cockpit06Needle10
+    100032: Cockpit06Needle11
+    100034: Cockpit06Needle12
+    100036: Cockpit06Needle13
+    100038: Handle01
+    100040: Handle02
+    100042: Handle03
+    100044: Handle04
+    100046: Handle05
+    400000: //RootNode
+    400002: Cockpit06Base
+    400004: Cockpit06Compass01
+    400006: Cockpit06Compass02
+    400008: Cockpit06Details
+    400010: Cockpit06Horizont
+    400012: Cockpit06Needle01
+    400014: Cockpit06Needle02
+    400016: Cockpit06Needle03
+    400018: Cockpit06Needle04
+    400020: Cockpit06Needle05
+    400022: Cockpit06Needle06
+    400024: Cockpit06Needle07
+    400026: Cockpit06Needle08
+    400028: Cockpit06Needle09
+    400030: Cockpit06Needle10
+    400032: Cockpit06Needle11
+    400034: Cockpit06Needle12
+    400036: Cockpit06Needle13
+    400038: Handle01
+    400040: Handle02
+    400042: Handle03
+    400044: Handle04
+    400046: Handle05
+    2300000: Cockpit06Base
+    2300002: Cockpit06Compass01
+    2300004: Cockpit06Compass02
+    2300006: Cockpit06Details
+    2300008: Cockpit06Horizont
+    2300010: Cockpit06Needle01
+    2300012: Cockpit06Needle02
+    2300014: Cockpit06Needle03
+    2300016: Cockpit06Needle04
+    2300018: Cockpit06Needle05
+    2300020: Cockpit06Needle06
+    2300022: Cockpit06Needle07
+    2300024: Cockpit06Needle08
+    2300026: Cockpit06Needle09
+    2300028: Cockpit06Needle10
+    2300030: Cockpit06Needle11
+    2300032: Cockpit06Needle12
+    2300034: Cockpit06Needle13
+    2300036: Handle01
+    2300038: Handle02
+    2300040: Handle03
+    2300042: Handle04
+    2300044: Handle05
+    3300000: Cockpit06Base
+    3300002: Cockpit06Compass01
+    3300004: Cockpit06Compass02
+    3300006: Cockpit06Details
+    3300008: Cockpit06Horizont
+    3300010: Cockpit06Needle01
+    3300012: Cockpit06Needle02
+    3300014: Cockpit06Needle03
+    3300016: Cockpit06Needle04
+    3300018: Cockpit06Needle05
+    3300020: Cockpit06Needle06
+    3300022: Cockpit06Needle07
+    3300024: Cockpit06Needle08
+    3300026: Cockpit06Needle09
+    3300028: Cockpit06Needle10
+    3300030: Cockpit06Needle11
+    3300032: Cockpit06Needle12
+    3300034: Cockpit06Needle13
+    3300036: Handle01
+    3300038: Handle02
+    3300040: Handle03
+    3300042: Handle04
+    3300044: Handle05
+    4300000: Cockpit06Base
+    4300002: Cockpit06Needle03
+    4300004: Cockpit06Needle02
+    4300006: Cockpit06Needle01
+    4300008: Cockpit06Needle11
+    4300010: Cockpit06Needle13
+    4300012: Cockpit06Needle12
+    4300014: Cockpit06Needle10
+    4300016: Cockpit06Needle07
+    4300018: Cockpit06Needle06
+    4300020: Cockpit06Needle08
+    4300022: Cockpit06Horizont
+    4300024: Cockpit06Compass01
+    4300026: Cockpit06Compass02
+    4300028: Cockpit06Needle04
+    4300030: Cockpit06Needle05
+    4300032: Cockpit06Needle09
+    4300034: Cockpit06Details
+    4300036: Handle05
+    4300038: Handle04
+    4300040: Handle03
+    4300042: Handle02
+    4300044: Handle01
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 45
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
