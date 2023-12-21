@@ -16,6 +16,6 @@ MonoBehaviour:
   numDivisionsA: 6
   numDivisionsB: 5
   numDivisionsC: 15
-  persistence: 0.66
+  persistence: 0.7
   tile: 1
   invert: 1
