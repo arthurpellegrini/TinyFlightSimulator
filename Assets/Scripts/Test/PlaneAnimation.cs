@@ -33,10 +33,10 @@ public class PlaneAnimation : MonoBehaviour {
     float smoothedYaw;
     float smoothYawV;
 
-    MFlight.Demo.Plane plane;
+    [Header ("Plane")] public MFlight.Demo.Plane plane;
 
     void Start () {
-        plane = GetComponent<MFlight.Demo.Plane>();
+        // plane = GetComponent<MFlight.Demo.Plane>();
     }
 
     void Update () {
@@ -60,6 +60,6 @@ public class PlaneAnimation : MonoBehaviour {
         rudder.localEulerAngles = new Vector3 (rudder.localEulerAngles.x, -smoothedYaw * rudderMax, rudder.localEulerAngles.z);
         
         // Stick 
-        // stick.localEulerAngles = new Vector3(Math.Clamp(100, 90, 120), Math.Clamp(), Math.Clamp())
+        // stick.localEulerAngles = new Vector3 (-smoothedPitch * stickMaxPitch, stick.localEulerAngles.y, -smoothedRoll * stickMaxRoll);
     }
 }
