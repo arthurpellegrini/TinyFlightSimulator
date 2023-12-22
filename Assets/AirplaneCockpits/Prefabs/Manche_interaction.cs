@@ -6,28 +6,34 @@ public class JoystickControl : MonoBehaviour
     public float mouseSensitivity = 100f; // Sensibilité du mouvement du manche pour la souris
     public float smoothTime = 0.1f; // Temps de lissage pour le mouvement du manche
 
-    private float targetRotationX;
-    private float rotationVelocityX;
-    private float rotationVelocityY;
+    private float targetPitch; // Pour le mouvement avant/arrière
+    private float targetYaw;   // Pour le mouvement gauche/droite
+    private float pitchVelocity;
+    private float yawVelocity;
 
     void Update()
     {
         // Lecture des entrées du clavier
         float verticalInput = Input.GetAxis("Vertical") * keyboardSensitivity;
+        float horizontalInput = Input.GetAxis("Horizontal") * keyboardSensitivity;
 
         // Lecture des mouvements de la souris
         float mouseY = -Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
 
-        // Combinaison des entrées clavier et souris pour le mouvement vertical
-        targetRotationX += verticalInput + mouseY;
+        // Mise à jour des cibles de rotation
+        targetPitch += verticalInput + mouseY;
+        targetYaw += horizontalInput + mouseX;
 
-        // Limite de la rotation du manche
-        targetRotationX = Mathf.Clamp(targetRotationX, -10f, 10f);
+        // Application des limites de rotation
+        targetPitch = Mathf.Clamp(targetPitch, -45f, 45f);
+        targetYaw = Mathf.Clamp(targetYaw, -45f, 45f);
 
-        // Application d'une interpolation linéaire pour un mouvement lisse
-        float newRotationX = Mathf.SmoothDampAngle(transform.localEulerAngles.x, targetRotationX, ref rotationVelocityX, smoothTime);
+        // Interpolation lisse des rotations
+        float newPitch = Mathf.SmoothDampAngle(transform.localEulerAngles.x, targetPitch, ref pitchVelocity, smoothTime);
+        float newYaw = Mathf.SmoothDampAngle(transform.localEulerAngles.y, targetYaw, ref yawVelocity, smoothTime);
 
-        // Application de la rotation au manche
-        transform.localEulerAngles = new Vector3(newRotationX, transform.localEulerAngles.y, transform.localEulerAngles.z);
+        // Application des rotations au manche
+        transform.localEulerAngles = new Vector3(newPitch, newYaw, 0f);
     }
 }
