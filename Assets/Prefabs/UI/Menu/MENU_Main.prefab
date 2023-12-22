@@ -349,7 +349,7 @@ PrefabInstance:
     - target: {fileID: 7966313874730256147, guid: 6d730e0e3223cef478096d4b7e381471,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.33355558
+      value: 0.33400002
       objectReference: {fileID: 0}
     - target: {fileID: 7966313874730256147, guid: 6d730e0e3223cef478096d4b7e381471,
         type: 3}
@@ -359,7 +359,7 @@ PrefabInstance:
     - target: {fileID: 7966313874730256147, guid: 6d730e0e3223cef478096d4b7e381471,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.27800003
+      value: 0.27744445
       objectReference: {fileID: 0}
     - target: {fileID: 7966313874730256147, guid: 6d730e0e3223cef478096d4b7e381471,
         type: 3}
@@ -509,12 +509,12 @@ PrefabInstance:
     - target: {fileID: 7966313874730256147, guid: 6d730e0e3223cef478096d4b7e381471,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.8765209
+      value: 0.8766876
       objectReference: {fileID: 0}
     - target: {fileID: 7966313874730256147, guid: 6d730e0e3223cef478096d4b7e381471,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.25040743
+      value: 0.25100002
       objectReference: {fileID: 0}
     - target: {fileID: 7966313874730256147, guid: 6d730e0e3223cef478096d4b7e381471,
         type: 3}
@@ -524,7 +524,7 @@ PrefabInstance:
     - target: {fileID: 7966313874730256147, guid: 6d730e0e3223cef478096d4b7e381471,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.19433334
+      value: 0.194
       objectReference: {fileID: 0}
     - target: {fileID: 7966313874730256147, guid: 6d730e0e3223cef478096d4b7e381471,
         type: 3}
@@ -679,7 +679,7 @@ PrefabInstance:
     - target: {fileID: 7966313874730256147, guid: 6d730e0e3223cef478096d4b7e381471,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0.41700003
       objectReference: {fileID: 0}
     - target: {fileID: 7966313874730256147, guid: 6d730e0e3223cef478096d4b7e381471,
         type: 3}
@@ -689,7 +689,7 @@ PrefabInstance:
     - target: {fileID: 7966313874730256147, guid: 6d730e0e3223cef478096d4b7e381471,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.44400004
+      value: 0.36144444
       objectReference: {fileID: 0}
     - target: {fileID: 7966313874730256147, guid: 6d730e0e3223cef478096d4b7e381471,
         type: 3}
@@ -784,6 +784,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Button_Settings
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267585757037274403, guid: 6d730e0e3223cef478096d4b7e381471,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4569115803632937992, guid: 6d730e0e3223cef478096d4b7e381471,
         type: 3}

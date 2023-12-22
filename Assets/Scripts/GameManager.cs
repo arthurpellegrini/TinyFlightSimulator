@@ -52,9 +52,15 @@ public class GameManager : Manager<GameManager>
     private void ResetCamera()
     {
         Camera thirdPersonCamera = thirdPersonCameraGo.GetComponent<Camera>();
+        AudioListener thirdPersonAudioListener = thirdPersonCameraGo.GetComponent<AudioListener>();
+            
         Camera firstPersonCamera = firstPersonCameraGo[selectedPlane].GetComponent<Camera>();
+        AudioListener firstPersonAudioListener = firstPersonCameraGo[selectedPlane].GetComponent<AudioListener>();
+        
         firstPersonCamera.enabled = false;
+        firstPersonAudioListener.enabled = false;
         thirdPersonCamera.enabled = true;
+        thirdPersonAudioListener.enabled = true;
     }
 
     protected override IEnumerator InitCoroutine()
@@ -249,10 +255,16 @@ public class GameManager : Manager<GameManager>
         if (IsPlaying)
         {
             Camera thirdPersonCamera = thirdPersonCameraGo.GetComponent<Camera>();
-            // GameObject firstPersonCameraGo = planes[selectedPlane].transform.GetChild(0);
+            AudioListener thirdPersonAudioListener = thirdPersonCameraGo.GetComponent<AudioListener>();
+            
             Camera firstPersonCamera = firstPersonCameraGo[selectedPlane].GetComponent<Camera>();
+            AudioListener firstPersonAudioListener = firstPersonCameraGo[selectedPlane].GetComponent<AudioListener>();
+            
             firstPersonCamera.enabled = !firstPersonCamera.enabled;
             thirdPersonCamera.enabled = !thirdPersonCamera.enabled;
+            
+            firstPersonAudioListener.enabled = !firstPersonAudioListener.enabled;
+            thirdPersonAudioListener.enabled = !thirdPersonAudioListener.enabled;
         }
     }
 
