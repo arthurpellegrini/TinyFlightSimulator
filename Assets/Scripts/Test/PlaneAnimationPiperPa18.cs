@@ -44,33 +44,20 @@ public class PlaneAnimationPiperPA18 : MonoBehaviour
         // Roll
         float targetRoll = plane.Roll;
         smoothedRoll = Mathf.SmoothDamp(smoothedRoll, targetRoll, ref smoothRollV, Time.deltaTime * smoothTime);
-        if (targetRoll != null && smoothedRoll != null)
-        {
-            aileronLeft.localEulerAngles = new Vector3(-smoothedRoll * aileronMax, aileronLeft.localEulerAngles.y, aileronLeft.localEulerAngles.z);
-            aileronRight.localEulerAngles = new Vector3(smoothedRoll * aileronMax, aileronRight.localEulerAngles.y, aileronRight.localEulerAngles.z);
-        }
-        
+        aileronLeft.localEulerAngles = new Vector3(-smoothedRoll * aileronMax, aileronLeft.localEulerAngles.y, aileronLeft.localEulerAngles.z);
+        aileronRight.localEulerAngles = new Vector3(smoothedRoll * aileronMax, aileronRight.localEulerAngles.y, aileronRight.localEulerAngles.z);
+
         // Pitch
         float targetPitch = plane.Pitch;
         smoothedPitch = Mathf.SmoothDamp(smoothedPitch, targetPitch, ref smoothPitchV, Time.deltaTime * smoothTime);
-        if (targetPitch != null && smoothedPitch != null)
-        {
-            elevator.localEulerAngles = new Vector3(-smoothedPitch * elevatorMax, elevator.localEulerAngles.y, elevator.localEulerAngles.z);
-        }
-        
+        elevator.localEulerAngles = new Vector3(-smoothedPitch * elevatorMax, elevator.localEulerAngles.y, elevator.localEulerAngles.z);
+
         // Yaw
         float targetYaw = plane.Yaw;
         smoothedYaw = Mathf.SmoothDamp(smoothedYaw, targetYaw, ref smoothYawV, Time.deltaTime * smoothTime);
-        if (targetYaw != null && smoothedYaw != null)
-        {
-            rudder.localEulerAngles = new Vector3(rudder.localEulerAngles.x, -smoothedYaw * rudderMax, rudder.localEulerAngles.z);
-        }
+        rudder.localEulerAngles = new Vector3(rudder.localEulerAngles.x, -smoothedYaw * rudderMax, rudder.localEulerAngles.z);
 
         // Stick 
-        if (smoothedPitch != null && smoothedRoll != null)
-        {
-            stick.localEulerAngles = new Vector3(smoothedPitch * stickMaxPitch, stick.localEulerAngles.y,
-                -smoothedRoll * stickMaxRoll);
-        }
+        stick.localEulerAngles = new Vector3(smoothedPitch * stickMaxPitch, stick.localEulerAngles.y, -smoothedRoll * stickMaxRoll);
     }
 }

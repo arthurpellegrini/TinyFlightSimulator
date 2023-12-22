@@ -15,16 +15,18 @@ public class PlaneAnimationCessna172 : MonoBehaviour
     public Transform aileronRight;
     public float aileronMax = 20;
     [Header("Elevator (Pitch)")]
-    public Transform elevator;
+    public Transform elevatorLeft;
+    public Transform elevatorRight;
     public float elevatorMax = 20;
     [Header("Rudder (Yaw)")]
     public Transform rudder;
     public float rudderMax = 20;
 
-    [Header("Stick")]
-    public Transform stick;
-    public float stickMaxPitch = 20;
-    public float stickMaxRoll = 20;
+    [Header("Yokes")]
+    public Transform yokeLeft;
+    public Transform yokeRight;
+    public float yokesMaxPitch = 20;
+    public float yokesMaxRoll = 20;
 
     // Smoothing vars
     float smoothedRoll;
@@ -35,11 +37,7 @@ public class PlaneAnimationCessna172 : MonoBehaviour
     float smoothYawV;
 
     [Header("Plane")] public MFlight.Demo.Plane plane;
-
-    void Start()
-    {
-        plane = GetComponent<MFlight.Demo.Plane>();
-    }
+    
 
     void Update()
     {
@@ -55,7 +53,8 @@ public class PlaneAnimationCessna172 : MonoBehaviour
         // Pitch
         float targetPitch = plane.Pitch;
         smoothedPitch = Mathf.SmoothDamp(smoothedPitch, targetPitch, ref smoothPitchV, Time.deltaTime * smoothTime);
-        elevator.localEulerAngles = new Vector3(-smoothedPitch * elevatorMax, elevator.localEulerAngles.y, elevator.localEulerAngles.z);
+        elevatorLeft.localEulerAngles = new Vector3(-smoothedPitch * elevatorMax, elevatorLeft.localEulerAngles.y, elevatorLeft.localEulerAngles.z);
+        elevatorRight.localEulerAngles = new Vector3(-smoothedPitch * elevatorMax, elevatorRight.localEulerAngles.y, elevatorRight.localEulerAngles.z);
 
         // Yaw
         float targetYaw = plane.Yaw;
@@ -63,6 +62,9 @@ public class PlaneAnimationCessna172 : MonoBehaviour
         rudder.localEulerAngles = new Vector3(rudder.localEulerAngles.x, -smoothedYaw * rudderMax, rudder.localEulerAngles.z);
 
         // Stick 
-        stick.localEulerAngles = new Vector3(smoothedPitch * stickMaxPitch, stick.localEulerAngles.y, -smoothedRoll * stickMaxRoll);
+        yokeLeft.localEulerAngles = new Vector3(smoothedPitch * yokesMaxPitch, yokeLeft.localEulerAngles.y, -smoothedRoll * yokesMaxRoll);
+        // yokeLeft.position = new Vector3(yokeLeft.position.x, yokeLeft.position.y, Math.Clamp(smoothedPitch * yokesMaxPitch, 0.0f, 0.2f));
+        yokeRight.localEulerAngles = new Vector3(smoothedPitch * yokesMaxPitch, yokeRight.localEulerAngles.y, -smoothedRoll * yokesMaxRoll);
+        // yokeRight.position = new Vector3(yokeRight.position.x, yokeRight.position.y, Math.Clamp(smoothedPitch * yokesMaxPitch, 0.0f, 0.2f));
     }
 }
