@@ -41,7 +41,7 @@ public class WeatherControl : MonoBehaviour
         // Nombre al�atoire entre 0 et 99 pour d�terminer la m�t�o avec ce ratio (60% beau temps, 30% pluie, 10% neige)
         int weatherChance = Random.Range(0, 100);
 
-        if (weatherChance < 60)
+        if (weatherChance < 0)
         {
             // Beau temps (65% de chance)
             Debug.Log("Beau temps !");
@@ -53,7 +53,7 @@ public class WeatherControl : MonoBehaviour
                 cloudMasterScript.densityOffset = randomDensityOffset;
             }
         }
-        else if (weatherChance < 90)
+        else if (weatherChance < 0)
         {
             // Pluie (25% de chance)
             if (rainParticles != null)
