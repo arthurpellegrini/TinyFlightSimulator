@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/Flight Demo.unity
+    path: Assets/Scenes/Flight Demo.unity
     guid: 20dddf1c73edf8b43a45ac49c16cb892
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 2c72c1a5f2cf1774ca235bcb5559048a,

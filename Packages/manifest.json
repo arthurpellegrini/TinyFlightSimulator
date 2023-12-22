@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.sitterheim.unityresolutiondialog": "https://github.com/sitterheim/UnityResolutionDialog.git#release/stable",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.adaptiveperformance": "5.0.2",
@@ -7,6 +8,7 @@
     "com.unity.ai.navigation": "1.1.4",
     "com.unity.analytics": "3.8.1",
     "com.unity.collab-proxy": "2.0.7",
+    "com.unity.formats.fbx": "4.2.1",
     "com.unity.ide.rider": "3.0.24",
     "com.unity.ide.visualstudio": "2.0.18",
     "com.unity.ide.vscode": "1.2.5",
@@ -15,6 +17,7 @@
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.7.5",
     "com.unity.ugui": "1.0.0",
+    "com.varneon.fbx-to-blender-importer": "https://github.com/Varneon/UnityFBX-To-Blender-Importer.git?path=/Packages/com.varneon.fbx-to-blender-importer",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
@@ -45,7 +48,6 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0",
-	"com.sitterheim.unityresolutiondialog": "https://github.com/sitterheim/UnityResolutionDialog.git#release/stable"
+    "com.unity.modules.xr": "1.0.0"
   }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +20,11 @@ public class PlaneAnimation : MonoBehaviour {
     public Transform rudder;
     public float rudderMax = 20;
 
+    [Header ("Stick")]       
+    public Transform stick;        
+    public float stickMaxX = 20;    
+    public float stickMaxZ = 20;    
+    
     // Smoothing vars
     float smoothedRoll;
     float smoothRollV;
@@ -30,7 +36,7 @@ public class PlaneAnimation : MonoBehaviour {
     MFlight.Demo.Plane plane;
 
     void Start () {
-        plane = GetComponent<MFlight.Demo.Plane> ();
+        plane = GetComponent<MFlight.Demo.Plane>();
     }
 
     void Update () {
@@ -52,5 +58,8 @@ public class PlaneAnimation : MonoBehaviour {
         float targetYaw = plane.Yaw;
         smoothedYaw = Mathf.SmoothDamp (smoothedYaw, targetYaw, ref smoothYawV, Time.deltaTime * smoothTime);
         rudder.localEulerAngles = new Vector3 (rudder.localEulerAngles.x, -smoothedYaw * rudderMax, rudder.localEulerAngles.z);
+        
+        // Stick 
+        // stick.localEulerAngles = new Vector3(Math.Clamp(100, 90, 120), Math.Clamp(), Math.Clamp())
     }
 }

@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.autodesk.fbx": {
+      "version": "4.2.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.sitterheim.unityresolutiondialog": {
       "version": "https://github.com/sitterheim/UnityResolutionDialog.git#release/stable",
       "depth": 0,
@@ -71,6 +78,16 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.formats.fbx": {
+      "version": "4.2.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.timeline": "1.7.1",
+        "com.autodesk.fbx": "4.2.1"
+      },
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
@@ -188,6 +205,13 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
+    },
+    "com.varneon.fbx-to-blender-importer": {
+      "version": "https://github.com/Varneon/UnityFBX-To-Blender-Importer.git?path=/Packages/com.varneon.fbx-to-blender-importer",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "186476b7b97113f618f2af42aecf2647d0abc91f"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

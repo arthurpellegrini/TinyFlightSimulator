@@ -50,10 +50,10 @@ public class MeshEditor : Editor {
 
     void OnEnable () {
         terrainGenerator = (TerrainGenerator) target;
-        Tools.hidden = true;
+        UnityEditor.Tools.hidden = true;
     }
 
     void OnDisable () {
-        Tools.hidden = false;
+        UnityEditor.Tools.hidden = false;
     }
 }

@@ -43,6 +43,13 @@ namespace MFlight.Demo
         private bool rollOverride = false;
         private bool pitchOverride = false;
 
+        public void ResetPitchYawRoll()
+        {
+            Pitch = 0.0f;
+            Yaw = 0.0f;
+            Roll = 0.0f;
+        }
+
         private void Awake()
         {
             rigid = GetComponent<Rigidbody>();
