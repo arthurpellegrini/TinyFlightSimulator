@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Common;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameManager : Manager<GameManager>
 {
@@ -8,8 +9,11 @@ public class GameManager : Manager<GameManager>
     [SerializeField] private GameObject[] planes;
     [SerializeField] private int selectedPlane = 0;
     
+    [FormerlySerializedAs("ThirdPersonCameraGo")]
+    [FormerlySerializedAs("mainCameraGo")]
     [Header("Camera and Flight Instances")]
-    [SerializeField] private GameObject mainCameraGo;
+    [SerializeField] private GameObject thirdPersonCameraGo;
+    [SerializeField] private GameObject[] firstPersonCameraGo;
     [SerializeField] private GameObject globalPlaneGo;
     [SerializeField] private GameObject mouseFlightRigGo;
     [SerializeField] private MFlight.Demo.Plane plane;
@@ -45,6 +49,14 @@ public class GameManager : Manager<GameManager>
         mouseFlightRigGo.SetActive(true);
     }
 
+    private void ResetCamera()
+    {
+        Camera thirdPersonCamera = thirdPersonCameraGo.GetComponent<Camera>();
+        Camera firstPersonCamera = firstPersonCameraGo[selectedPlane].GetComponent<Camera>();
+        firstPersonCamera.enabled = false;
+        thirdPersonCamera.enabled = true;
+    }
+
     protected override IEnumerator InitCoroutine()
     {
         EventManager.EventManager.Instance.Raise(new MainMenuButtonClickedEvent());
@@ -71,6 +83,7 @@ public class GameManager : Manager<GameManager>
         EventManager.EventManager.Instance.AddListener<NextPlaneButtonClickedEvent>(NextPlaneButtonClicked);
         EventManager.EventManager.Instance.AddListener<ResumeButtonClickedEvent>(ResumeButtonClicked);
         EventManager.EventManager.Instance.AddListener<EscapeButtonClickedEvent>(EscapeButtonClicked);
+        EventManager.EventManager.Instance.AddListener<SwitchCameraButtonClickedEvent>(SwitchCameraButtonClicked);
         EventManager.EventManager.Instance.AddListener<QuitButtonClickedEvent>(QuitButtonClicked);
     }
 
@@ -85,6 +98,7 @@ public class GameManager : Manager<GameManager>
         EventManager.EventManager.Instance.RemoveListener<NextPlaneButtonClickedEvent>(NextPlaneButtonClicked);
         EventManager.EventManager.Instance.RemoveListener<ResumeButtonClickedEvent>(ResumeButtonClicked);
         EventManager.EventManager.Instance.RemoveListener<EscapeButtonClickedEvent>(EscapeButtonClicked);
+        EventManager.EventManager.Instance.RemoveListener<SwitchCameraButtonClickedEvent>(SwitchCameraButtonClicked);
         EventManager.EventManager.Instance.RemoveListener<QuitButtonClickedEvent>(QuitButtonClicked);
     }
 
@@ -119,6 +133,7 @@ public class GameManager : Manager<GameManager>
     {
         if (_gameState != GameState.Menu) MusicLoopsManager.Instance.PlayMusic(Constants.MENU_MUSIC);
         _gameState = GameState.Menu;
+        ResetCamera();
         DisablePlaneInput();
         SetTimeScale(0);
         EventManager.EventManager.Instance.Raise(new GameMainMenuEvent());
@@ -151,8 +166,10 @@ public class GameManager : Manager<GameManager>
         SetTimeScale(0);
         
         // Set Camera Position
-        mainCameraGo.transform.position = new Vector3(-375, 124, 170);
-        mainCameraGo.transform.localEulerAngles = new Vector3(-4, -85, 0);
+        ResetCamera();
+        
+        thirdPersonCameraGo.transform.position = new Vector3(-370, 124, 168.5f);
+        thirdPersonCameraGo.transform.localEulerAngles = new Vector3(-4, -85, 0);
         
         // Set Plane Position
         globalPlaneGo.transform.position = new Vector3(-385, 125, 170);
@@ -225,6 +242,18 @@ public class GameManager : Manager<GameManager>
     private void ResumeButtonClicked(ResumeButtonClickedEvent e)
     {
         GameResume();
+    }
+
+    private void SwitchCameraButtonClicked(SwitchCameraButtonClickedEvent e)
+    {
+        if (IsPlaying)
+        {
+            Camera thirdPersonCamera = thirdPersonCameraGo.GetComponent<Camera>();
+            // GameObject firstPersonCameraGo = planes[selectedPlane].transform.GetChild(0);
+            Camera firstPersonCamera = firstPersonCameraGo[selectedPlane].GetComponent<Camera>();
+            firstPersonCamera.enabled = !firstPersonCamera.enabled;
+            thirdPersonCamera.enabled = !thirdPersonCamera.enabled;
+        }
     }
 
     private void EscapeButtonClicked(EscapeButtonClickedEvent e)

@@ -46,6 +46,7 @@ public class MenuManager : Manager<MenuManager>
     private void Update()
     {
         if (Input.GetButtonDown("Cancel")) EscapeButtonHasBeenClicked();
+        if (Input.GetKeyDown(KeyCode.C)) SwitchCameraButtonHasBeenClicked();
     }
 
     #endregion
@@ -110,6 +111,11 @@ public class MenuManager : Manager<MenuManager>
     public void ResumeButtonHasBeenClicked()
     {
         EventManager.EventManager.Instance.Raise(new ResumeButtonClickedEvent());
+    }
+
+    public void SwitchCameraButtonHasBeenClicked()
+    {
+        EventManager.EventManager.Instance.Raise(new SwitchCameraButtonClickedEvent());
     }
 
     public void EscapeButtonHasBeenClicked()

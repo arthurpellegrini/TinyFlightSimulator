@@ -76,6 +76,10 @@ public class EscapeButtonClickedEvent : Event
 {
 }
 
+public class SwitchCameraButtonClickedEvent : Event
+{
+}
+
 public class QuitButtonClickedEvent : Event
 {
 }

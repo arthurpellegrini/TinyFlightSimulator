@@ -36,11 +36,6 @@ public class PlaneAnimationPiperPA18 : MonoBehaviour
 
     [Header("Plane")] public MFlight.Demo.Plane plane;
 
-    void Start()
-    {
-        //plane = GetComponent<MFlight.Demo.Plane>();
-    }
-
     void Update()
     {
         // https://en.wikipedia.org/wiki/Aircraft_principal_axes
@@ -49,20 +44,33 @@ public class PlaneAnimationPiperPA18 : MonoBehaviour
         // Roll
         float targetRoll = plane.Roll;
         smoothedRoll = Mathf.SmoothDamp(smoothedRoll, targetRoll, ref smoothRollV, Time.deltaTime * smoothTime);
-        aileronLeft.localEulerAngles = new Vector3(-smoothedRoll * aileronMax, aileronLeft.localEulerAngles.y, aileronLeft.localEulerAngles.z);
-        aileronRight.localEulerAngles = new Vector3(smoothedRoll * aileronMax, aileronRight.localEulerAngles.y, aileronRight.localEulerAngles.z);
-
+        if (targetRoll != null && smoothedRoll != null)
+        {
+            aileronLeft.localEulerAngles = new Vector3(-smoothedRoll * aileronMax, aileronLeft.localEulerAngles.y, aileronLeft.localEulerAngles.z);
+            aileronRight.localEulerAngles = new Vector3(smoothedRoll * aileronMax, aileronRight.localEulerAngles.y, aileronRight.localEulerAngles.z);
+        }
+        
         // Pitch
         float targetPitch = plane.Pitch;
         smoothedPitch = Mathf.SmoothDamp(smoothedPitch, targetPitch, ref smoothPitchV, Time.deltaTime * smoothTime);
-        elevator.localEulerAngles = new Vector3(-smoothedPitch * elevatorMax, elevator.localEulerAngles.y, elevator.localEulerAngles.z);
-
+        if (targetPitch != null && smoothedPitch != null)
+        {
+            elevator.localEulerAngles = new Vector3(-smoothedPitch * elevatorMax, elevator.localEulerAngles.y, elevator.localEulerAngles.z);
+        }
+        
         // Yaw
         float targetYaw = plane.Yaw;
         smoothedYaw = Mathf.SmoothDamp(smoothedYaw, targetYaw, ref smoothYawV, Time.deltaTime * smoothTime);
-        rudder.localEulerAngles = new Vector3(rudder.localEulerAngles.x, -smoothedYaw * rudderMax, rudder.localEulerAngles.z);
+        if (targetYaw != null && smoothedYaw != null)
+        {
+            rudder.localEulerAngles = new Vector3(rudder.localEulerAngles.x, -smoothedYaw * rudderMax, rudder.localEulerAngles.z);
+        }
 
         // Stick 
-        stick.localEulerAngles = new Vector3(smoothedPitch * stickMaxPitch, stick.localEulerAngles.y, -smoothedRoll * stickMaxRoll);
+        if (smoothedPitch != null && smoothedRoll != null)
+        {
+            stick.localEulerAngles = new Vector3(smoothedPitch * stickMaxPitch, stick.localEulerAngles.y,
+                -smoothedRoll * stickMaxRoll);
+        }
     }
 }
