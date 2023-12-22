@@ -120,7 +120,8 @@ public class MenuManager : Manager<MenuManager>
 
     public void EscapeButtonHasBeenClicked()
     {
-        EventManager.EventManager.Instance.Raise(new EscapeButtonClickedEvent());
+        if(GameManager.Instance.IsPlaying)
+            EventManager.EventManager.Instance.Raise(new EscapeButtonClickedEvent());
     }
 
     public void QuitButtonHasBeenClicked()
