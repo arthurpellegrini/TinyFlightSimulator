@@ -6,8 +6,7 @@ TinyFlightSimulator is a flight simulation game that aims to provide a realistic
 
 ## II. Video / Visuals
 
-Here are some screenshots and videos demonstrating the game.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CkYRasocMWo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Here is a video demonstrating the game. [Watch video](https://www.youtube.com/watch?v=4QOcCGI6xOU)
 
 ## III. Installation
 
@@ -59,4 +58,5 @@ Project Tiny Flight Simulator's objective is to create a user-friendly, small-sc
 
 Through the simulator, users will be able to learn the basics of flight mechanics, get hands-on experience of flying different aircraft, and enjoy a visually appealing simulation environment.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4QOcCGI6xOU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![Clouds](https://i.imgur.com/3bXb0EB.jpg)
+[Watch video](https://www.youtube.com/watch?v=4QOcCGI6xOU)
